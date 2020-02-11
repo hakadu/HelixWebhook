@@ -17,7 +17,7 @@ app = Flask(__name__)
 def push_event(body):
     body = '[' + body + ']'
     helix = config['HELIX CONNECTION']
-    headers = {'Content-Type': 'application/json', 'Authorization': 'apiKey ' + os.environ.get('APIKEY', '60ca36fc-6e7f-471c-a378-a5718b67ee0a') }
+    headers = {'Content-Type': 'application/json', 'Authorization': 'apiKey ' + os.environ.get('APIKEY', '0d4c6231-f206-4400-ae5d-648d3cee3d96') }
     url = 'https://' + os.environ.get('HOSTNAME', 'clm-tlv-tsuw2v.bmc.com') + ":" + os.environ.get('PORT', '443') + '/tsws/api/v1.0/events'
     req = requests.post(url, headers=headers, data=body, verify=False)
     if req.status_code == 200:
